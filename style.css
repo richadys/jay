@@ -1,0 +1,127 @@
+*{ 
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'poppins' ,sans-serif;
+}
+body{ 
+  display:flex;
+  align-items: center;
+  justify-content:center;
+  min-height:100vh;
+  background:#343F4F;
+}
+.wrapper{ 
+  display:inline-flex;
+
+}
+
+.wrapper .static-txt{ 
+  color:#fff;
+font-size: 60px;
+font-weight:400;
+}
+
+.wrapper.dynamic-txts{ 
+  margin-left:15px;
+  height:90px;
+  line-height:90px;
+  overflow: hidden;
+
+} 
+
+.dynamic-txts li{ 
+  color:#FC6D6D;
+  list-style:none;
+  font-size:60px;
+  font-weight:500;
+ position:relative;
+ top: 0;
+  animation: slide 6s steps(4) infinite;
+
+  }
+@keyframes slide {
+  100%{ 
+ top: -360px;
+  }
+}
+
+.dynamic-txts li span{ 
+  position:relative;
+}
+ 
+@keyframes typing {
+  100%{ 
+    left: 100%;
+    margin: 0 -35px 0 35px;
+
+}
+}
+
+.dynamic-txts li span::after{ 
+  content: "";
+  position: absolute;
+  left:0;
+  height: 100%;
+   width: 100%;
+   background:#343F4F;
+   border-left: 2px solid #FC6D6D;
+  animation: typing 1.5s steps(10) infinite;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*--------------------css for small screen------------*/
+nav.fas{ 
+  display:none;
+  }
+  
+  @media only screen and (max-width :600px){ 
+  #header{ 
+    
+  } 
+  .header.text{ 
+  margin-top:100%;
+  font-size:16px;
+  }
+  .header-text h1{ 
+  font-size:30px;
+  }
+  nav.fas{ 
+  display:block;
+  font-size:25px;
+  }
+  nav ul{ 
+  background:#ff004f;
+  position:fixed;
+  top:0;
+  right:-200px;
+  width:200px;
+  height:100vh;
+  padding-top:50px ;
+  z-index: 2;
+  transition:right 0.5s;
+  }
+  nav ul li{ 
+  display:block;
+  margin:25px;
+  }
+  nav ul .fas{ 
+  position:absolute;
+  top: 25px;
+  left:25px;
+  cursor:pointer;
+  }
+  }
